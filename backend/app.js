@@ -7,6 +7,7 @@ const sqlite3 = require("sqlite3");
 
 const notesRouter = require("./routes/notesRouter");
 const PORT = require("./config/port");
+const cors = require("cors");
 
 const app = express();
 app.use(express.json());
@@ -30,6 +31,8 @@ const initializeDBAndServer = async () => {
     } else {
       console.error("Error: Schema file missing");
     }
+
+    app.use(cors());
 
     app.get("/", (request, response) => {
       response.send(
