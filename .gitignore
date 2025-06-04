@@ -1,0 +1,9 @@
+# Global
+node_modules
+.env
+package-lock.json
+
+# Backend
+/backend/node_modules
+/backend/.env
+/backend/package-lock.json
